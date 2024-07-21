@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>Frontend Mentor | Contact form</title>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+  <div class="toast-container">
+      <div>
+        <img src="assets/images/icon-success-check.svg" alt="">
+        <h5>Message Sent!</h5>
+      </div><br>
+      <p class="toast-text">
+        Thanks for completing the form. We'll be in touch soon!
+      </p>
+  </div>
+  <main>
+    <h1>Contact Us</h1>
+    <form action="#">
+      <div class="name-container">
+        <div class="fName">
+          <label for="first-name">First Name <span class="req">*</span></label>
+          <input type="text" name="first-name" id="first-name">
+          <span class="" hidden>This field is required</span>
+        </div>
+        <div class="lName">
+          <label for="last-name">Last Name <span class="req">*</span></label>
+          <input type="text" name="last-name" id="last-name">
+          <span class="" hidden>This field is required</span>
+        </div>
+      </div>
+      <div class="email-container">
+        <label for="email">Email Address <span class="req">*</span></label>
+        <input type="email" name="email" id="email">
+        <span class="" hidden>This field is required</span>
+        <span class="" hidden>Please enter a valid email address</span>
+      </div>
+      <label>Query Type *</label><br>
+      <div class="query-container">
+        <div class="gen-container">
+          <div>
+            <img src="assets/images/icon-radio-selected.svg" alt="">
+            <label for="gen-query">General Enquiry</label>
+          </div>
+          <span hidden>Please select a query type</span>
+        </div>
+        <div class="sup-container">
+          <div>
+            <img src="assets/images/icon-radio-selected.svg" alt="">
+            <label for="sup-query">Support Request</label>
+          </div>
+          <span hidden>Please select a query type</span>
+        </div>
+      </div>
+        <div class="message-container">
+          <label for="message">Message <span class="req">*</span></label><br>
+          <textarea name="message" id="message"></textarea>
+          <span hidden>This field is required</span>
+        </div>
+        <div class="consent-container">
+          <div>
+            <img src="assets/images/icon-checkbox-check.svg" alt="">
+            <label for="consent">
+              I consent to being contacted by the team <span class="req">*</span>
+            </label>
+          </div>
+          <span hidden>To submit this form, please consent to being contacted          </span>
+        </div>
+        <button type="button">Submit</button>
+      </div>
+    </form>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="js/index.js"></script>
+</body>
+</html>
