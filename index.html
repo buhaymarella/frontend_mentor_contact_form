@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-  <div class="toast-container">
+  <div class="toast-container" id="toast-container">
       <div>
         <img src="assets/images/icon-success-check.svg" alt="">
         <h5>Message Sent!</h5>
@@ -19,63 +19,65 @@
   </div>
   <main>
     <h1>Contact Us</h1>
-    <form action="#">
+    <form action="#"onsubmit="return successBtn()">
       <div class="name-container">
         <div class="fName">
           <label for="first-name">First Name <span class="req">*</span></label>
           <input type="text" name="first-name" id="first-name">
-          <span class="" hidden>This field is required</span>
+          <span id="fName-alert">This field is required</span>
         </div>
         <div class="lName">
           <label for="last-name">Last Name <span class="req">*</span></label>
           <input type="text" name="last-name" id="last-name">
-          <span class="" hidden>This field is required</span>
+          <span id="lName-alert">This field is required</span>
         </div>
       </div>
       <div class="email-container">
         <label for="email">Email Address <span class="req">*</span></label>
         <input type="email" name="email" id="email">
-        <span class="" hidden>This field is required</span>
-        <span class="" hidden>Please enter a valid email address</span>
+        <span id="email-alert" >This field is required</span>
+        <span id="vEmail-alert">Please enter a valid email address</span>
       </div>
       <label>Query Type *</label><br>
       <div class="query-container">
-        <div class="gen-container">
+        <div class="gen-container" id="gen-container">
           <div>
-            <img src="assets/images/icon-radio-selected.svg" alt="">
-            <label for="gen-query">General Enquiry</label>
+            <img src="assets/images/icon-radio-selected.svg" alt="radio button" id="gen-radBtn"  onclick="genEnq()">
+            <input type="radio" name="gen-radio" id="gen-radio" onclick="genEnq()">
+              <label for="gen-radio">General Enquiry</label>
           </div>
-          <span hidden>Please select a query type</span>
         </div>
-        <div class="sup-container">
+        <div class="sup-container" id="sup-container">
           <div>
-            <img src="assets/images/icon-radio-selected.svg" alt="">
+            <img src="assets/images/icon-radio-selected.svg" alt="radio button" id="sup-radBtn" onclick="supReq()">
+            <input type="radio" name="sup-radio" id="sup-radio" onclick="supReq()">
             <label for="sup-query">Support Request</label>
           </div>
-          <span hidden>Please select a query type</span>
         </div>
       </div>
+      <span id="query-alert">Please select a query type</span>
         <div class="message-container">
           <label for="message">Message <span class="req">*</span></label><br>
-          <textarea name="message" id="message"></textarea>
-          <span hidden>This field is required</span>
+          <textarea name="message" id="message" class="message"></textarea>
+          <span id="message-alert">This field is required</span>
         </div>
         <div class="consent-container">
           <div>
-            <img src="assets/images/icon-checkbox-check.svg" alt="">
+            <img src="assets/images/icon-checkbox-check.svg" alt="" id="checkbox-img" onclick="checkBtn()">
+            <input type="checkbox" name="consent" id="checkbox" onclick="checkBtn()">
             <label for="consent">
-              I consent to being contacted by the team <span class="req">*</span>
+              I hereby consent to being contacted by the team <span class="req">*</span>
             </label>
           </div>
-          <span hidden>To submit this form, please consent to being contacted          </span>
+          <span id="checkbox-alert">To submit this form, please consent to being contacted          </span>
         </div>
-        <button type="button">Submit</button>
+        <button type="submit" id="sub-btn" onclick=" successBtn()">Submit</button>
       </div>
     </form>
-  </main>
+  </main><br>
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="https://github.com/buhaymarella/">Marella Buhay</a>.
   </div>
 
   <script src="js/index.js"></script>

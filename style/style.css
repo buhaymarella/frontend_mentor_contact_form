@@ -28,6 +28,7 @@
 body{
     background-color: var(--Green-200-lighter);
     padding: 5%;
+    transition: none;
 }
 main{
     background-color: var(--White);
@@ -35,8 +36,9 @@ main{
     margin: auto;
     max-width: 70vh;
     padding: 1.5rem 1rem;
+    margin-top: 2rem;
     border-radius: 12px;
-    z-index: -1;
+    transition: none !important;
 }
 h1{
     color: var(--Grey-900-darker);
@@ -49,8 +51,13 @@ label{
 }
 .name-container{
     display: flex;
-    gap: .8rem;
     margin: 1rem 0;
+    padding: 0%;
+    max-width: 100%;
+    gap: .8rem;
+}
+.fName, .lName{
+    width: 100%;
 }
 .name-container input,
 .email-container input{
@@ -72,6 +79,7 @@ span{
 }
 .query-container{
     margin: .8rem 0;
+    margin-bottom: 0;
 }
 .query-container .gen-container, .sup-container{
     padding: .5rem;
@@ -87,22 +95,25 @@ span{
     display: flex;
     gap: 5px;
 }
-.gen-container{
-    background-color: var(--Green-200-lighter);
-}
 .name-container input:focus,
-.email-container input:focus{
-    border: 2px solid var(--Green-600-medium);
+.email-container input:focus,
+.message-container textarea:focus{
+    border: 2px solid var(--Green-600-medium)!important;
 }
 .email-container{
     margin-bottom: .8rem;
+}
+.message-container{
+    margin-top: .8rem;
 }
 .message-container textarea{
     width: 100%;
     border-radius: 4px;
     padding: .8rem;
     margin: .5rem 0;
+    margin-bottom: 0;
     border: 1px solid var(--Grey-500-medium);
+    outline: none;
 }
 .consent-container{
     margin: 1rem 0;
@@ -132,16 +143,17 @@ button:hover{
     position: relative;
     margin: auto;
     border-radius: 12px;
-    z-index: 20;
-    margin-top: -60px;
-    animation: animation .8s .2ms ease-in-out;
+    z-index: -10;
+    display: none ;
+    margin-top: -30px;
+    animation: .4s animation ease-in-out;
 }
 @keyframes animation{
     from{
-        margin-top: -200px;
+        transform: translateY(30px);
     }
     to{
-        margin-top: -60px;
+        transform: translateY(-11px);
     }
 }
 .toast-container div{
@@ -160,6 +172,16 @@ button:hover{
 }
 .attribution a {
     color: hsl(228, 45%, 44%); 
+}
+
+#checkbox-img, #gen-radBtn, #sup-radBtn,
+#fName-alert, #lName-alert, #email-alert, #vEmail-alert, #query-alert
+, #message-alert, #checkbox-alert{
+    display: none;
+
+}
+#checkbox, #gen-radio, #sup-radio{
+    width: 1.2rem;
 }
 
 @media screen and (max-width: 375px) {
